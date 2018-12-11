@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Tab panel</title>
+
+  <link rel="stylesheet" href="../node_modules/marx-css/css/marx.min.css">
+  <link rel="stylesheet" href="../common/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<main>
+  <h1>Tab panel</h1>
+
+  <div id="tab-panel" class="tabs">
+    <ul class="tablist ul-horizontal" aria-label="Cool stuff!">
+      <li role="tab" class="tab selected" data-tab-show="tab-1" tabindex="0">Design</li>
+      <li role="tab" class="tab" data-tab-show="tab-2" tabindex="0">Develop</li>
+      <li role="tab" class="tab" data-tab-show="tab-3" tabindex="0">Deploy</li>
+    </ul>
+
+    <div id="tab-1" role="tabpanel" class="tabpanel" tabindex="0" aria-labelledby="ninja">
+      <h3>Design</h3>
+      <img src="../common/images/undraw_designer_girl.svg" class="img"/>
+    </div>
+    <div id="tab-2" role="tabpanel" class="tabpanel hidden" tabindex="0" aria-labelledby="shark">
+      <h3>Develop</h3>
+      <img src="../common/images/undraw_developer_activity.svg" class="img"/>
+    </div>
+    <div id="tab-3" role="tabpanel" class="tabpanel hidden" tabindex="0" aria-labelledby="laser">
+      <h3>Deploy</h3>
+      <img src="../common/images/undraw_maintenance.svg" class="img"/>
+    </div>
+  </div>
+</main>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
