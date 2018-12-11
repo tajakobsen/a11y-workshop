@@ -5,21 +5,31 @@ const images = {
 };
 
 function init() {
-  const showButton = document.querySelector('#button-show-dialog');
-  const dialog = document.querySelector('#dialog');
-  const closeButton  = document.querySelector('#button-dialog-close');
-  const selectButton = document.querySelector('#button-dialog-select');
-  const displayJob  = document.querySelector('#display-job');
-  const image  = document.querySelector('img');
+  const showButtonEl   = document.querySelector('#button-show-dialog');
+  const dialogEl       = document.querySelector('#dialog');
+  const closeButtonEl  = document.querySelector('#button-dialog-close');
+  const selectButtonEl = document.querySelector('#button-dialog-select');
 
-  showButton.addEventListener('click', () => show(dialog));
-  closeButton.addEventListener('click', () => hide(dialog));
-  selectButton.addEventListener('click', () => {
-    const job = document.querySelector('input[name="job"]:checked').value;
-    displayJob.innerHTML = `My job: <strong>${job}</strong>`;
-    image.src = images[job];
-    hide(dialog);
+  showButtonEl.addEventListener('click', () => show(dialogEl));
+  closeButtonEl.addEventListener('click', () => hide(dialogEl));
+  selectButtonEl.addEventListener('click', () => {
+    const job = getSelectedJob();
+    updateDescription(job);
+    updateImage(job);
+    hide(dialogEl);
   });
+}
+
+function getSelectedJob () {
+  return document.querySelector('input[name="job"]:checked').value;
+}
+
+function updateDescription (job) {
+  document.querySelector('#display-job').innerHTML = `My job: <strong>${job}</strong>`;
+}
+
+function updateImage(job) {
+  document.querySelector('img').src = images[job];
 }
 
 function show(el) {
