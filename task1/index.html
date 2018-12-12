@@ -8,7 +8,7 @@
   <title>Tab panel</title>
 
   <link rel="stylesheet" href="../node_modules/marx-css/css/marx.min.css">
-  <link rel="stylesheet" href="../common/style.css">
+  <link rel="stylesheet" href="../common/styles/common.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,23 +17,27 @@
   <h1>Tab panel</h1>
 
   <div id="tab-panel" class="tabs">
-    <ul class="tablist ul-horizontal" aria-label="Cool stuff!">
-      <li role="tab" class="tab selected" data-tab-show="tab-1" tabindex="0">Design</li>
-      <li role="tab" class="tab" data-tab-show="tab-2" tabindex="0">Develop</li>
-      <li role="tab" class="tab" data-tab-show="tab-3" tabindex="0">Deploy</li>
+    <!-- Tab list -->
+    <ul class="tablist ul-horizontal">
+      <li class="tab selected" data-tab-show="tab-1">Design</li>
+      <li class="tab" data-tab-show="tab-2">Develop</li>
+      <li class="tab" data-tab-show="tab-3">Deploy</li>
     </ul>
 
-    <div id="tab-1" role="tabpanel" class="tabpanel" tabindex="0" aria-labelledby="ninja">
+    <!-- Tab panels -->
+    <div id="tab-1" class="tabpanel">
       <h3>Design</h3>
-      <img src="../common/images/undraw_designer_girl.svg" class="img"/>
+      <img src="../common/images/undraw_designer_girl.svg" />
     </div>
-    <div id="tab-2" role="tabpanel" class="tabpanel hidden" tabindex="0" aria-labelledby="shark">
+
+    <div id="tab-2" class="tabpanel hidden">
       <h3>Develop</h3>
-      <img src="../common/images/undraw_hello.svg" class="img"/>
+      <img src="../common/images/undraw_hello.svg" />
     </div>
-    <div id="tab-3" role="tabpanel" class="tabpanel hidden" tabindex="0" aria-labelledby="laser">
+
+    <div id="tab-3" class="tabpanel hidden">
       <h3>Deploy</h3>
-      <img src="../common/images/undraw_maintenance.svg" class="img"/>
+      <img src="../common/images/undraw_maintenance.svg" />
     </div>
   </div>
 </main>

@@ -1,14 +1,15 @@
+import { hide, show, isHidden } from '../common/scripts/common.js';
+
 /**
  * @type {HTMLVideoElement}
  */
-const video = document.querySelector('video');
-
-const playPauseButtonEl = document.getElementById('play-pause-button');
-const muteButtonEl = document.getElementById('mute-button');
+const video                   = document.querySelector('video');
+const playPauseButtonEl       = document.getElementById('play-pause-button');
+const muteButtonEl            = document.getElementById('mute-button');
 const playbackRateMenuItemEls = document.querySelectorAll('.playback-rate [data-playback-rate]');
-const playbackRateButtonEl = document.getElementById('playback-rate-button');
-const playbackRateMenuEl = document.querySelector('.menu');
-const sliderEl = document.querySelector('.slider');
+const playbackRateButtonEl    = document.getElementById('playback-rate-button');
+const playbackRateMenuEl      = document.querySelector('.menu');
+const sliderEl                = document.querySelector('.slider');
 
 /**
  * Enum for css-classes
@@ -99,31 +100,6 @@ function isPlaying() {
 function updatePlayPauseButton (isPlaying) {
   playPauseButtonEl.classList.add(isPlaying ? classes.PLAY : classes.PAUSE);
   playPauseButtonEl.classList.remove(isPlaying ? classes.PAUSE : classes.PLAY );
-}
-
-/**
- * Hides the element passed in
- * @param {Element} el
- */
-function show(el) {
-  el.classList.remove('hidden');
-}
-
-/**
- * Shows the element passed in
- * @param {Element} el
- */
-function hide(el) {
-  el.classList.add('hidden');
-}
-
-/**
- * Returns true if the hidden css class is applied to an element
- * @param {Element} el
- * @returns {boolean}
- */
-function isHidden(el) {
-  return el.classList.contains('hidden')
 }
 
 // initiate

@@ -1,15 +1,25 @@
+import { hide, show } from '../common/scripts/common.js';
+
+const showButtonEl   = document.getElementById('button-show-dialog');
+const dialogEl       = document.getElementById('dialog');
+const closeButtonEl  = document.getElementById('button-dialog-close');
+const selectButtonEl = document.getElementById('button-dialog-select');
+const displayJobEl   = document.getElementById('display-job');
+const imageEl        = document.querySelector('img');
+
+/**
+ * @type {Object.<string, string>}
+ */
 const images = {
   "Designer": "../common/images/undraw_designer_girl.svg",
   "Developer": "../common/images/undraw_hello.svg",
   "Operations": "../common/images/undraw_maintenance.svg"
 };
 
+/**
+ * Initializes the app
+ */
 function init() {
-  const showButtonEl   = document.querySelector('#button-show-dialog');
-  const dialogEl       = document.querySelector('#dialog');
-  const closeButtonEl  = document.querySelector('#button-dialog-close');
-  const selectButtonEl = document.querySelector('#button-dialog-select');
-
   showButtonEl.addEventListener('click', () => show(dialogEl));
   closeButtonEl.addEventListener('click', () => hide(dialogEl));
   selectButtonEl.addEventListener('click', () => {
@@ -20,24 +30,28 @@ function init() {
   });
 }
 
+/**
+ * Returns the selected job
+ * @returns {String}
+ */
 function getSelectedJob () {
   return document.querySelector('input[name="job"]:checked').value;
 }
 
+/**
+ * Updates the description field
+ * @param {String} job
+ */
 function updateDescription (job) {
-  document.querySelector('#display-job').innerHTML = `My job: <strong>${job}</strong>`;
+  displayJobEl.innerHTML = `My job: <strong>${job}</strong>`;
 }
 
+/**
+ * Updates the image
+ * @param {String} job
+ */
 function updateImage(job) {
-  document.querySelector('img').src = images[job];
-}
-
-function show(el) {
-  el.classList.remove('hidden');
-}
-
-function hide(el) {
-  el.classList.add('hidden');
+  imageEl.src = images[job];
 }
 
 init();

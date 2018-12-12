@@ -1,51 +1,52 @@
+import { hide, show } from '../common/scripts/common.js';
+
+const tabs      = document.querySelectorAll('li');
+const tabPanels = document.querySelectorAll('.tabpanel');
+
 /**
  *  initiates listeners
  */
 function init() {
-  const tabs = document.querySelectorAll('li');
-  const tabPanels = document.querySelectorAll('.tabpanel');
-
   tabs.forEach(tab => {
-    // Add click event listener to
-    tab.addEventListener('click', event => onSelect(tabs, tabPanels, event.srcElement));
+    tab.addEventListener('click', event => onSelect(event.srcElement));
   });
 }
 
 /**
- *
- * @param {NodeList<HTMLElement>} tabs
- * @param {NodeList<HTMLElement>} panels
+ * Shows the selected tabs panel, and highlights it
  * @param {HTMLElement} selectedElement
  */
-function onSelect(tabs, panels, selectedElement) {
-  const tabPanelId = selectedElement.dataset.tabShow;
-  const tabPanelElement = document.getElementById(tabPanelId);
+function onSelect(selectedElement) {
+  tabs.forEach(unselect);
+  tabPanels.forEach(hide);
 
-  // show only selected
-  addClassToAll(panels, 'hidden');
-  tabPanelElement.classList.remove('hidden');
-
-  // set selected
-  removeClassFromAll(tabs, 'selected');
-  selectedElement.classList.add('selected');
+  select(selectedElement);
+  show(getPanelByTab(selectedElement));
 }
 
 /**
- * Adds a class to all elements
- * @param {NodeList<HTMLElement>} elements
- * @param {String} cls
+ * Returns the tab panel corresponding to a tab
+ * @param {HTMLElement} el
+ * @returns {HTMLElement}
  */
-function addClassToAll(elements, cls){
-  elements.forEach(el => el.classList.add(cls));
+function getPanelByTab(el) {
+  return document.getElementById(el.dataset.tabShow);
 }
 
 /**
- * Removes a class from all elements
- * @param {NodeList<HTMLElement>} elements
- * @param {String} cls
+ * Removes selection from the passed in element
+ * @param {Element} el
  */
-function removeClassFromAll(elements, cls) {
-  elements.forEach(el => el.classList.remove(cls));
+function unselect(el) {
+  el.classList.remove('selected')
+}
+
+/**
+ * Selects the passed in element
+ * @param {Element} el
+ */
+function select(el) {
+  el.classList.add('selected')
 }
 
 // initiate
