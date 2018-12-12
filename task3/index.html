@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Video player</title>
+
+  <link rel="stylesheet" href="../node_modules/marx-css/css/marx.min.css">
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../common/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<main>
+  <h1>Video player</h1>
+
+  <div class="video-player">
+    <video id="video1">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+      Your browser does not support HTML5 video.
+    </video>
+
+    <div class="toolbar">
+      <button id="play-pause-button" class="fa fa-play"></button>
+      <button id="mute-button" class="fa fa-volume-up"></button>
+
+      <div class="rail">
+        <span tabindex="0" class="slider"></span>
+      </div>
+
+      <span class="playback-rate dropdown">
+        <button id="playback-rate-button" class="dropbtn fa fa-running"></button>
+
+        <div class="menu hidden">
+          <a class="menuitem" href="#" data-playback-rate="0.5">0.5</a>
+          <a class="menuitem" href="#" data-playback-rate="0.75">0.75</a>
+          <a class="menuitem checked" href="#" data-playback-rate="1">Normal</a>
+          <a class="menuitem" href="#" data-playback-rate="1.5">1.5</a>
+          <a class="menuitem" href="#" data-playback-rate="2">2.0</a>
+        </div>
+    </span>
+    </div>
+  </div>
+</main>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

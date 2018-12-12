@@ -1,0 +1,79 @@
+.video-player {
+  width: 400px;
+  max-width: 100%;
+}
+
+.video-player video {
+  width: 100%;
+}
+
+/* Toolbar */
+.toolbar {
+  background-color: #353535;
+  display: flex;
+}
+
+.toolbar button {
+  background-color: transparent;
+  color: #eee;
+}
+
+/* Dropdown menu */
+.menu {
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.menuitem {
+  float: none;
+  color: black ! important;
+  padding: 12px 16px;
+  text-decoration: none ! important;
+  display: block;
+  text-align: left;
+}
+
+.menuitem::before {
+  content: url("../node_modules/@fortawesome/fontawesome-free/svgs/regular/circle.svg");
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.75rem;
+}
+
+.menuitem:hover {
+  background-color: #ddd;
+}
+
+.menuitem.checked::before {
+  content: url("../node_modules/@fortawesome/fontawesome-free/svgs/solid/circle.svg");
+}
+
+/* Slider */
+.rail {
+  background-color: #eee;
+  position: relative;
+  top: 1em;
+  height: 4px;
+  flex-grow: 1;
+}
+
+.slider  {
+  border: 1px solid #888;
+  border-top-color:  #666;
+  border-left-color: #666;
+  background-color: #DDD;
+  position: absolute;
+  left: 0;
+  width: 8px;
+  height: 1.4rem;
+  top: -0.6rem;
+}
+
+.slider:focus {
+  outline: 2px solid cornflowerblue;
+  outline-offset: 2px;
+}
