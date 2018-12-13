@@ -7,6 +7,10 @@ ul.ul-horizontal li {
   display: inline-block;
 }
 
+ul.ul-unstyled{
+  list-style-type: none;
+}
+
 .hidden {
   display: none;
 }
