@@ -38,7 +38,7 @@ function getPanelByTab(el) {
  * @param {Element} el
  */
 function unselect(el) {
-  el.classList.remove('selected')
+  el.classList.remove('selected');
 }
 
 /**
@@ -46,7 +46,7 @@ function unselect(el) {
  * @param {Element} el
  */
 function select(el) {
-  el.classList.add('selected')
+  el.classList.add('selected');
 }
 
 // initiate
