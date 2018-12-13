@@ -3,16 +3,16 @@ img {
 }
 
 /* Tab panel */
-.tabs {
+.tab-panel-default {
   max-width: 50rem;
 }
 
-.tabs .tablist {
+.tab-panel-default .tablist {
   margin-bottom: -1px;
   position: relative;
 }
 
-.tabs .tab {
+.tab-panel-default .tab {
   box-sizing: border-box;
   padding: 1rem;
   border: 1px solid #333;
@@ -20,12 +20,12 @@ img {
   cursor: pointer;
 }
 
-.tabs .selected {
+.tab-panel-default .selected {
   background-color: #007bff;
   color: white;
 }
 
-.tabs .tabpanel {
+.tab-panel-default .tabpanel {
   border: 1px solid #333;
   background-color: #007bff;
   padding: 1rem;
