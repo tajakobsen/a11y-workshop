@@ -14,6 +14,18 @@
 
 <body>
 <main>
+  <!--
+
+  WAI-ARIA Roles, States, and Properties§
+The element that serves as the dialog container has a role of dialog.
+All elements required to operate the dialog are descendants of the element that has role dialog.
+The dialog container element has aria-modal set to true.
+The dialog has either:
+A value set for the aria-labelledby property that refers to a visible dialog title.
+A label specified by aria-label.
+Optionally, the aria-describedby property is set on the element with the dialog role to indicate which element or elements in the dialog contain content that describes the primary purpose or message of the dialog. Specifying descriptive elements enables screen readers to announce the description along with the dialog title and initially focused element when the dialog opens.
+  -->
+
   <h1>Button with dialog</h1>
 
   <p id="display-job">No job selected...</p>
@@ -25,28 +37,30 @@
   </button>
 
   <!-- Dialog -->
-  <div id="dialog" class="hidden">
-    <h2>Select your job</h2>
+  <div class="mask hidden">
+    <div id="dialog">
+      <h2>Select your job</h2>
 
-    <form>
-      <div>
-        <input type="radio" id="designer" name="job" value="Designer" checked>
-        <label for="designer">Designer</label>
-      </div>
+      <form>
+        <div>
+          <input type="radio" id="designer" name="job" value="Designer" checked>
+          <label for="designer">Designer</label>
+        </div>
 
-      <div>
-        <input type="radio" id="developer" name="job" value="Developer">
-        <label for="developer">Developer</label>
-      </div>
+        <div>
+          <input type="radio" id="developer" name="job" value="Developer">
+          <label for="developer">Developer</label>
+        </div>
 
-      <div>
-        <input type="radio" id="operations" name="job" value="Operations">
-        <label for="operations">Operations</label>
-      </div>
-    </form>
+        <div>
+          <input type="radio" id="operations" name="job" value="Operations">
+          <label for="operations">Operations</label>
+        </div>
+      </form>
 
-    <button id="button-dialog-select">Select</button>
-    <button id="button-dialog-close">Close</button>
+      <button id="button-dialog-select">Select</button>
+      <button id="button-dialog-close">Close</button>
+    </div>
   </div>
 </main>
 

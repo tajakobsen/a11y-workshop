@@ -1,5 +1,6 @@
 import { hide, show } from '../common/scripts/common.js';
 
+const maskEl         = document.querySelector(".mask");
 const showButtonEl   = document.getElementById('button-show-dialog');
 const dialogEl       = document.getElementById('dialog');
 const closeButtonEl  = document.getElementById('button-dialog-close');
@@ -20,13 +21,13 @@ const images = {
  * Initializes the app
  */
 function init() {
-  showButtonEl.addEventListener('click', () => show(dialogEl));
-  closeButtonEl.addEventListener('click', () => hide(dialogEl));
+  showButtonEl.addEventListener('click', () => show(maskEl));
+  closeButtonEl.addEventListener('click', () => hide(maskEl));
   selectButtonEl.addEventListener('click', () => {
     const job = getSelectedJob();
     updateDescription(job);
     updateImage(job);
-    hide(dialogEl);
+    hide(maskEl);
   });
 }
 
