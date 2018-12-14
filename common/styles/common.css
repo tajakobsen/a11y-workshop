@@ -14,3 +14,12 @@ ul.ul-unstyled{
 .hidden {
   display: none;
 }
+
+.button-secondary {
+  background-color: #aaa;
+}
+
+.button-secondary:hover {
+  background-color: #888;
+  border-color: #666;
+}
