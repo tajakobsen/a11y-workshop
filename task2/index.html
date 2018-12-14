@@ -8,6 +8,7 @@
   <title>Button with dialog</title>
 
   <link rel="stylesheet" href="../node_modules/marx-css/css/marx.min.css">
+  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="../common/styles/common.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -42,23 +43,14 @@ Optionally, the aria-describedby property is set on the element with the dialog 
       <h2>Select your job</h2>
 
       <form>
-        <div>
-          <input type="radio" id="designer" name="job" value="Designer" checked>
-          <label for="designer">Designer</label>
-        </div>
-
-        <div>
-          <input type="radio" id="developer" name="job" value="Developer">
-          <label for="developer">Developer</label>
-        </div>
-
-        <div>
-          <input type="radio" id="operations" name="job" value="Operations">
-          <label for="operations">Operations</label>
-        </div>
+        <ul class="choices">
+          <li class="choice">Designer</li>
+          <li class="choice">Developer</li>
+          <li class="choice">Operations</li>
+        </ul>
       </form>
 
-      <button id="button-dialog-select">Select</button>
+      <button id="button-dialog-select" class="disabled">Select</button>
       <button id="button-dialog-close">Close</button>
     </div>
   </div>

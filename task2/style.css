@@ -1,3 +1,9 @@
+button.disabled {
+  background-color: rgba(0, 123, 255, 0.5) ! important;
+  border: none ! important;
+  box-shadow: none ! important;
+}
+
 .mask {
   position: absolute;
   top: 0;
@@ -29,6 +35,34 @@
 
 #dialog h2 {
   margin-top: 0;
+}
+
+.choices {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.choice {
+  padding: 1rem;
+  background-color: #dadada;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.choice:before {
+  font-family: "Font Awesome 5 Free";
+  color: white;
+  font-weight: 900;
+  content: "\f0c8";
+  margin-right: 0.75rem;
+}
+
+.choice.selected {
+  background-color: #52ceb1;
+}
+
+.choice.selected:before {
+  content: "\f14a";
 }
 
 img {
