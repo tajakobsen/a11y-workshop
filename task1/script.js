@@ -8,13 +8,13 @@ const tabPanels = document.querySelectorAll('.tabpanel');
  */
 function init() {
   tabs.forEach(tab => {
-    tab.addEventListener('click', event => onSelect(event.srcElement));
+    tab.addEventListener('click', event => onSelect(event.target));
   });
 }
 
 /**
  * Shows the selected tabs panel, and highlights it
- * @param {HTMLElement} selectedElement
+ * @param {EventTarget | null} selectedElement
  */
 function onSelect(selectedElement) {
   tabs.forEach(unselect);
