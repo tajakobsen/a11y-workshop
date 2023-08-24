@@ -16,6 +16,13 @@ Run development server:
 npm run serve
 ```
 
+## Screen readers
+
+ - [Chrome Extension](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn)
+ - VoiceOver (innebygget Mac)
+ - NVDA (Windows)
+ - Orca (Linux)
+
 ## Resources
 
 * [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/patterns/) (This is an important one!)
